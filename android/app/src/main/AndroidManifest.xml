@@ -7,7 +7,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="web_browser_app"
+        android:label="Web Browser"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
@@ -44,4 +44,7 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        android:maxSdkVersion="30" />
 </manifest>
