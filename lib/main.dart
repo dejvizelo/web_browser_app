@@ -22,63 +22,29 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('InAppWebView Example'),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                if (_webViewController != null) {
-                  _webViewController.goBack();
-                }
-              },
+        body: SafeArea(
+          child: InAppWebView(
+            initialUrl: "https://flutter.dev/",
+            initialOptions: InAppWebViewGroupOptions(
+                crossPlatform: InAppWebViewOptions(
+                  debuggingEnabled: true,
+                )
             ),
-            IconButton(
-              icon: Icon(Icons.arrow_forward),
-              onPressed: () {
-                if (_webViewController != null) {
-                  _webViewController.goForward();
-                }
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.refresh),
-              onPressed: () {
-                if (_webViewController != null) {
-                  _webViewController.reload();
-                }
-              },
-            )
-          ],
-        ),
-        body: Container(
-            child: InAppWebView(
-              initialUrl: "https://flutter.dev/",
-              initialOptions: InAppWebViewGroupOptions(
-                  crossPlatform: InAppWebViewOptions(
-                    debuggingEnabled: true,
-                  )
-              ),
-              onWebViewCreated: (InAppWebViewController controller) {
-                _webViewController = controller;
-              },
-              onLoadStart: (InAppWebViewController controller, String url) {
-                setState(() {
-                  this.url = url;
-                });
-              },
-              onLoadStop: (InAppWebViewController controller, String url) async {
-                setState(() {
-                  this.url = url;
-                });
-              },
-              onProgressChanged: (InAppWebViewController controller, int progress) {
-                setState(() {
-                  this.progress = progress / 100;
-                });
-              },
-            ),
+            onWebViewCreated: (InAppWebViewController controller) {
+              _webViewController = controller;
+            },
+            onLoadStart: (InAppWebViewController controller, String url) {
+              setState(() {
+                this.url = url;
+              });
+            },
+            onLoadStop: (InAppWebViewController controller, String url) async {
+              setState(() {
+                this.url = url;
+              });
+            },
           ),
+        ),
       ),
     );
   }
