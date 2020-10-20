@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         body: SafeArea(
           child: InAppWebView(
-            initialUrl: "https://flutter.dev/",
+            initialFile: "assets/W3.CSS_Template.html",
             initialOptions: InAppWebViewGroupOptions(
                 crossPlatform: InAppWebViewOptions(
                   debuggingEnabled: true,
