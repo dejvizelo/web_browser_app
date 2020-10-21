@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         body: SafeArea(
           child: InAppWebView(
-            initialFile: "assets/W3.CSS_Template.html",
+            initialFile: "assets/js_example.html",
             initialOptions: InAppWebViewGroupOptions(
                 crossPlatform: InAppWebViewOptions(
                   debuggingEnabled: true,

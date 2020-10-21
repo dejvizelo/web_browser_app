@@ -50,6 +50,7 @@ flutter:
   assets:
     - assets/W3.CSS_Template.html
     - assets/W3.CSS_Template_files/
+    - assets/js_example.html
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
